@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="dokter"
+            type="com.example.huisdoktersgent.data.local.DokterAndFields" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:textSize="20dp"
+            android:id="@+id/textNaam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:textSize="25dp"
+            android:id="@+id/tv_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Naam dokter"
+            android:text="@{dokter.fields.naam}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:id="@+id/textAdressGemeente"
+            android:textSize="20dp"
+            android:text="Gemeente: "
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textNaam"
+            />
+
+        <TextView
+            android:id="@+id/tv_detail_address"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="13dp"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Provincieweg 4, 9552 Borsbeke"
+            android:text="@{dokter.fields.gemeente}"
+            app:layout_constraintStart_toEndOf="@+id/textAdressGemeente"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextAdressStraat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textAdressGemeente"
+            android:textSize="20dp"
+            android:text="Straat: "/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginStart="51dp"
+           android:textSize="20dp"
+           android:id="@+id/InfoAdressStraat"
+           tools:text="Provincieweg"
+           android:text="@{dokter.fields.straat}"
+           app:layout_constraintStart_toEndOf="@+id/TextAdressStraat"
+           app:layout_constraintTop_toBottomOf="@+id/tv_detail_address"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextAdressHuisNr"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextAdressStraat"
+            android:textSize="20dp"
+            android:text="HuisNr: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:layout_marginStart="42dp"
+            android:id="@+id/InfoAdresHuisNr"
+            tools:text="40"
+            android:text="@{dokter.fields.huisnr}"
+            app:layout_constraintStart_toEndOf="@+id/TextAdressHuisNr"
+            app:layout_constraintTop_toBottomOf="@+id/InfoAdressStraat"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TextAdresPostcode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextAdressHuisNr"
+            android:textSize="20dp"
+            android:text="Postcode: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:textSize="20dp"
+            android:id="@+id/InfoAdressPostcode"
+            tools:text="9552"
+            android:text="@{dokter.fields.postcode}"
+            app:layout_constraintStart_toEndOf="@+id/TextAdresPostcode"
+            app:layout_constraintTop_toBottomOf="@+id/InfoAdresHuisNr"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/TextType"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextAdresPostcode"
+            android:textSize="20dp"
+            android:text="Type dokter: "/>
+
+        <TextView
+            android:id="@+id/tv_detail_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:text="Dokterstype"
+            android:textSize="20dp"
+            android:text="@{dokter.fields.type}"
+            app:layout_constraintStart_toEndOf="@+id/TextType"
+            app:layout_constraintTop_toBottomOf="@+id/InfoAdressPostcode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

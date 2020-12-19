@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph_main"
+    app:startDestination="@id/dokterOverviewFragment">
+
+    <fragment
+        android:id="@+id/dokterOverviewFragment"
+        android:name="com.example.huisdoktersgent.DokterOverviewFragment"
+        android:label="DokterOverviewFragment" >
+        <action
+            android:id="@+id/action_dokterOverviewFragment_to_dokterDetailFragment"
+            app:destination="@id/dokterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dokterDetailFragment"
+        android:name="com.example.huisdoktersgent.DokterDetailFragment"
+        android:label="DokterDetailFragment" >
+        <argument
+            android:name="dokterId"
+            app:argType="string" />
+    </fragment>
+</navigation>
